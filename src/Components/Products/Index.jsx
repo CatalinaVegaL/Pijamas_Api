@@ -1,22 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-import image from "../../Resources/Male_1.png";
-
-const Info = styled.div`
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.5s ease;
-  cursor: pointer;
-`;
+import { DataContext } from "../../Context/Dataprovider";
+import { ProductItem } from "./ProductItem";
 
 const Products = styled.div`
   padding: 20px;
@@ -25,78 +10,25 @@ const Products = styled.div`
   justify-content: space-between;
 `;
 
-const Product = styled.div`
-  flex: 1;
-  margin: 5px;
-  min-width: 280px;
-  height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f5fbfd;
-  position: relative;
-
-  &:hover ${Info} {
-    opacity: 1;
-  }
-`;
-
-const Image = styled.img`
-  height: 75%;
-  z-index: 2;
-`;
-
-const Icon = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  transition: all 0.5s ease;
-  &:hover {
-    background-color: #e9f5f5;
-    transform: scale(1.2);
-  }
-`;
-
 export const ProductList = () => {
+  const value = useContext(DataContext);
+  const [productos] = value.productos;
+
+  console.log(productos);
+
   return (
     <Products>
-      <Product>
-        <Image src={image} />
-        <Info>
-          <Icon>
-            <a href="#">
-              <box-icon name="search-alt-2"></box-icon>
-            </a>
-          </Icon>
-          <Icon>
-            <a>
-              <box-icon name="cart"></box-icon>
-            </a>
-          </Icon>
-        </Info>
-      </Product>
-
-      <Product>
-        <Image src={image} />
-        <Info>
-          <Icon>
-            <a href="#">
-              <box-icon name="search-alt-2"></box-icon>
-            </a>
-          </Icon>
-          <Icon>
-            <a>
-              <box-icon name="cart"></box-icon>
-            </a>
-          </Icon>
-        </Info>
-      </Product>
-
+      {productos.map((producto) => (
+        <ProductItem
+          key={producto.id}
+          id={producto.id}
+          title={producto.title}
+          price={producto.price}
+          image={producto.image}
+          category={producto.category}
+          cantidad={producto.cantidad}
+        />
+      ))}
     </Products>
   );
 };
