@@ -5,7 +5,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { DataContext } from "../../Context/Dataprovider";
 
 //------------------------------------  STYLES  ------------------------------------//
-const Container = styled.div``;
+const Container = styled.div`
+`;
+
 
 const Head = styled.div`
   height: 8vh;
