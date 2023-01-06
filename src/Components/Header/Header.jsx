@@ -70,21 +70,6 @@ const ProductList = styled.div`
   color: black;
 `;
 
-// const Male = styled.div`
-//   flex: 1;
-//   display: Flex;
-//   justify-content: center;
-//   color: black;
-// `;
-
-// const Children = styled.div`
-//   flex: 1;
-//   display: Flex;
-//   justify-content: center;
-//   border-left: 1px solid #646464;
-//   color: black;
-// `;
-
 //------------------------------------  COMPONENT DEVELOPMENT  ------------------------------------//
 export const Header = () => {
   
@@ -107,15 +92,25 @@ export const Header = () => {
         </Link>
       </Head>
       <Nav>
-          <Link to={`/productos`} style={{
+          <Link to={`/productos/femenino`} style={{
             flex: "1",
             display: "Flex",
             textDecoration:"none"}}>
-          <ProductList>Productos</ProductList>
+          <ProductList>Femenino</ProductList>
           </Link>
-{/* 
-        <Male>Productos</Male>
-        <Children>Productos</Children> */}
+          <Link to={`/productos/masculino`} style={{
+            flex: "1",
+            display: "Flex",
+            textDecoration:"none"}}>
+          <ProductList>Masculino</ProductList>
+          </Link>
+          <Link to={`/productos/infantil`} style={{
+            flex: "1",
+            display: "Flex",
+            textDecoration:"none"}}>
+          <ProductList>Infantil</ProductList>
+          </Link>
+
       </Nav>
     </Container>
   );

@@ -12,26 +12,30 @@ const Products = styled.div`
 `;
 
 //------------------------------------  COMPONENT DEVELOPMENT  ------------------------------------//
-export const ProductList = () => {
+export const ProductListF = () => {
 
   //hook structuring
   const value = useContext(DataContext);
   const [products] = value.products;
-
+  
   //Return of the function
   return (
     <Products>
-      {products.map((product) => (
-        <ProductItem
-          key={product.id}
-          id={product.id}
-          title={product.title}
-          price={product.price}
-          image={product.image}
-          category={product.category}
-          cantidad={product.cantidad}
-        />
-      ))}
+      {products.map((product) => {
+        if(product.category === "Femenino") {
+          return (
+            <ProductItem
+            key={product.id}
+            id={product.id}
+            title={product.title}
+            price={product.price}
+            image={product.image}
+            category={product.category}
+            cantidad={product.cantidad}
+          />
+          )
+        }
+      })}
     </Products>
   );
 };
