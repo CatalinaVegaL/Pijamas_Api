@@ -1,10 +1,15 @@
 import React from 'react'
-//------------------------------------  STYLES  ------------------------------------//
+import Benefits from '../Benefits/BenefitsList'
+import Categories from '../Categories/CategoryList'
+import Prom from '../Prom/Prom'
 
-
-
+//------------------------------------  COMPONENT DEVELOPMENT  ------------------------------------//
 export const Home = () => {
   return (
-    <div>Homepage (AGREGAR EL RESTO)</div>
+    <div>
+      <Prom></Prom>
+      <Categories></Categories>
+      <Benefits></Benefits>
+    </div>
   )
 }
