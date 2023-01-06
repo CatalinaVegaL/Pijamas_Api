@@ -103,7 +103,7 @@ const Button = styled.div`
   color: white;
   text-align: center;
   margin: 20px;
-  padding: 2%;
+  padding: 2vh;
   width: 50%;
   font-weight: 600;
   cursor:pointer;
@@ -161,9 +161,12 @@ export const Cart = () => {
                         style={{
                             textAlign: "center",
                             fontSize: "clamp(0px, 2.5vh, 100px)",
+                            color: "gray",
+                            padding: "30vh 0",
+                            fontWeight: "lighter"
                         }}
                     >
-                        No tiene nada en el carro de compra
+                        No ha añadido nada al carro de compra
                     </h2>
                 ) : (
                     <>

@@ -13,10 +13,10 @@ export const Pages = () => {
       <Switch>
         //Website routes
         <Route path="/" exact component={Home} />
-        <Route path="/productos/femenino" exact component={ProductListF} />
-        <Route path="/productos/masculino" exact component={ProductListM} />
-        <Route path="/productos/infantil" exact component={ProductListI} />
-        <Route path="/carrito" exact component={Cart} />
+        <Route path="/Productos/Femenino" exact component={ProductListF} />
+        <Route path="/Productos/Masculino" exact component={ProductListM} />
+        <Route path="/Productos/Infantil" exact component={ProductListI} />
+        <Route path="/Carrito" exact component={Cart} />
       </Switch>
     </section>
   )

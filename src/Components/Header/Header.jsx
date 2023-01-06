@@ -92,19 +92,19 @@ export const Header = () => {
         </Link>
       </Head>
       <Nav>
-          <Link to={`/productos/femenino`} style={{
+          <Link to={`/productos/Femenino`} style={{
             flex: "1",
             display: "Flex",
             textDecoration:"none"}}>
           <ProductList>Femenino</ProductList>
           </Link>
-          <Link to={`/productos/masculino`} style={{
+          <Link to={`/productos/Masculino`} style={{
             flex: "1",
             display: "Flex",
             textDecoration:"none"}}>
           <ProductList>Masculino</ProductList>
           </Link>
-          <Link to={`/productos/infantil`} style={{
+          <Link to={`/productos/Infantil`} style={{
             flex: "1",
             display: "Flex",
             textDecoration:"none"}}>
