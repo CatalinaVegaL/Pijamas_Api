@@ -114,6 +114,25 @@ export const Cart = () => {
     const [carrito, setCarrito] = value.carrito;
     const [total] = value.total;
 
+    const rest = id => {
+        carrito.forEach(item=>{
+            if (item.id === id) {
+                item.cantidad===1 ? item.cantidad = 1: item.cantidad -=1;
+            }
+            setCarrito([...carrito])
+        })
+    }
+
+    //Funcion de 
+    const sum = id => {
+        carrito.forEach(item=>{
+            if (item.id === id) {
+                item.cantidad +=1;
+            }
+            setCarrito([...carrito])
+        })
+    }
+
     const removeProduct = id => {
         if(window.confirm("¿Desea eliminar el producto?")) {
             carrito.forEach((item, index) => {
@@ -125,6 +144,8 @@ export const Cart = () => {
             setCarrito([...carrito])
         }   
     }
+
+    console.log(carrito)
 
     return (
         <Cars>
@@ -140,18 +161,18 @@ export const Cart = () => {
                     </h2>
                 ) : (
                     <>
-                        {carrito.map((product) => (
+                        {carrito.map((product) => ( 
                             <CarContainer>
-                                <Image src={product.image} />
+                                <Image src={product.image} key={product.id} />
                                 <TextCar>
-                                    <Title>{product.title} </Title>
-                                    <Price>${product.price} </Price>
+                                    <Title>{{product.title} key={product.id}} </Title>
+                                    <Price>${product.price} key={product.id} </Price>
                                 </TextCar>
                                 <IntCar>
                                     <BottonCar>
-                                        <box-icon name="chevron-up"></box-icon>
-                                        <Cant>{product.cantidad}</Cant>
-                                        <box-icon name="chevron-down"></box-icon>
+                                        <box-icon name="chevron-up" onClick={()=> sum(product.id)} ></box-icon>
+                                        <Cant>{product.cantidad} key={product.id}</Cant>
+                                        <box-icon name="chevron-down" onClick={()=> rest(product.id)}  ></box-icon>
                                     </BottonCar>
                                     <RemoveItem onClick={() => removeProduct(product.id)}>
                                         <box-icon name="trash"></box-icon>
