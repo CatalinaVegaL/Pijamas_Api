@@ -4,18 +4,17 @@ import { Data } from "../data";
 export const DataContext = createContext();
 
 export const DataProvider = (props) => {
-	const [productos, setProductos] = useState([]);
-	// const [menu, setMenu] = useState(false);
+	const [products, setProducts] = useState([]);
 	const [carrito, setCarrito] = useState([]);
 	const [total, setTotal] = useState(0);
 
 	//Evita inconvenientes con valores Undefined al llamar los productos del data
 	useEffect(() => {
-		const producto = Data.items;
-		if (producto) {
-			setProductos(producto);
+		const product = Data.items;
+		if (product) {
+			setProducts(product);
 		} else {
-			setProductos([]);
+			setProducts([]);
 		}
 	}, []);
 
@@ -26,7 +25,7 @@ export const DataProvider = (props) => {
 			}, 0);
 			setTotal(res);
 		};
-		getTotal();
+		getTotal(); 
 	}, [carrito]);
 
 	//Funcion que almacena el dato al carro de compras en el header
@@ -35,7 +34,7 @@ export const DataProvider = (props) => {
 			return item.id !== id;
 		});
 		if (check) {
-			const data = productos.filter((producto) => {
+			const data = products.filter((producto) => {
 				return producto.id === id;
 			});
 			setCarrito([...carrito, ...data]);
@@ -45,7 +44,7 @@ export const DataProvider = (props) => {
 	};
 
 	const value = {
-		productos: [productos],
+		products: [products],
 		// menu: [menu, setMenu],
 		carrito: [carrito, setCarrito],
 		addCarrito: addCarrito,

@@ -2,6 +2,7 @@ import React, { createContext, useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 import { DataContext } from "../../Context/Dataprovider";
 
+//------------------------------------  STYLES  ------------------------------------//
 const Info = styled.div`
     opacity: 0;
     width: 100%;
@@ -55,10 +56,14 @@ const Icon = styled.div`
     }
 `;
 
+//------------------------------------  COMPONENT DEVELOPMENT  ------------------------------------//
 export const ProductItem = ({ title, image, category, price, id }) => {
+    
+    //hook structuring
     const value = useContext(DataContext);
     const addCarrito = value.addCarrito;
 
+    //Return of the function
     return (
         <Product>
             <Image src={image} />

@@ -4,6 +4,7 @@ import Logo from "../../Resources/Logo.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { DataContext } from "../../Context/Dataprovider";
 
+//------------------------------------  STYLES  ------------------------------------//
 const Container = styled.div``;
 
 const Head = styled.div`
@@ -69,22 +70,24 @@ const ProductList = styled.div`
   color: black;
 `;
 
-const Male = styled.div`
-  flex: 1;
-  display: Flex;
-  justify-content: center;
-  color: black;
-`;
+// const Male = styled.div`
+//   flex: 1;
+//   display: Flex;
+//   justify-content: center;
+//   color: black;
+// `;
 
-const Children = styled.div`
-  flex: 1;
-  display: Flex;
-  justify-content: center;
-  border-left: 1px solid #646464;
-  color: black;
-`;
+// const Children = styled.div`
+//   flex: 1;
+//   display: Flex;
+//   justify-content: center;
+//   border-left: 1px solid #646464;
+//   color: black;
+// `;
 
+//------------------------------------  COMPONENT DEVELOPMENT  ------------------------------------//
 export const Header = () => {
+  
   const value = useContext(DataContext);
   const [carrito] = value.carrito;
 
@@ -106,12 +109,13 @@ export const Header = () => {
       <Nav>
           <Link to={`/productos`} style={{
             flex: "1",
-            display: "Flex",}}>
+            display: "Flex",
+            textDecoration:"none"}}>
           <ProductList>Productos</ProductList>
           </Link>
-
+{/* 
         <Male>Productos</Male>
-        <Children>Productos</Children>
+        <Children>Productos</Children> */}
       </Nav>
     </Container>
   );

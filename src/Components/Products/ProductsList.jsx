@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { DataContext } from "../../Context/Dataprovider";
 import { ProductItem } from "./ProductItem";
 
+//------------------------------------  STYLES  ------------------------------------//
 const Products = styled.div`
   padding: 20px;
   display: flex;
@@ -10,23 +11,25 @@ const Products = styled.div`
   justify-content: space-between;
 `;
 
+//------------------------------------  COMPONENT DEVELOPMENT  ------------------------------------//
 export const ProductList = () => {
+
+  //hook structuring
   const value = useContext(DataContext);
-  const [productos] = value.productos;
+  const [products] = value.products;
 
-  console.log(productos);
-
+  //Return of the function
   return (
     <Products>
-      {productos.map((producto) => (
+      {products.map((product) => (
         <ProductItem
-          key={producto.id}
-          id={producto.id}
-          title={producto.title}
-          price={producto.price}
-          image={producto.image}
-          category={producto.category}
-          cantidad={producto.cantidad}
+          key={product.id}
+          id={product.id}
+          title={product.title}
+          price={product.price}
+          image={product.image}
+          category={product.category}
+          cantidad={product.cantidad}
         />
       ))}
     </Products>

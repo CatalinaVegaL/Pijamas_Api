@@ -109,47 +109,46 @@ const Button = styled.div`
   cursor:pointer;
 `;
 
+//------------------------------------  COMPONENT DEVELOPMENT  ------------------------------------//
 export const Cart = () => {
+
+    //hook structuring
     const value = useContext(DataContext);
     const [carrito, setCarrito] = value.carrito;
     const [total] = value.total;
 
-    const rest = id => {
+    //Function to reduce quantity of products
+    const rest = () => {
         carrito.forEach(item=>{
-            if (item.id === id) {
                 item.cantidad===1 ? item.cantidad = 1: item.cantidad -=1;
-            }
             setCarrito([...carrito])
         })
     }
 
-    //Funcion de 
-    const sum = id => {
+    //Function to increase quantity of products
+    const sum = () => {
         carrito.forEach(item=>{
-            if (item.id === id) {
                 item.cantidad +=1;
-            }
             setCarrito([...carrito])
         })
     }
 
-    const removeProduct = id => {
+    //Product remove function
+    const removeProduct = () => {
         if(window.confirm("¿Desea eliminar el producto?")) {
-            carrito.forEach((item, index) => {
-                if (item.id === id) {
-                    item.cantidad = 1;
-                    carrito.splice (index, 1)
-                }
+            carrito.forEach((index) => {
+                    carrito.splice (index)
             })
             setCarrito([...carrito])
         }   
     }
 
-    console.log(carrito)
-
+    //Return of the function
     return (
         <Cars>
             <Car>
+
+              //Return message in case the shopping cart is empty
                 {carrito.length === 0 ? (
                     <h2
                         style={{
@@ -161,6 +160,7 @@ export const Cart = () => {
                     </h2>
                 ) : (
                     <>
+                    //Function that is in charge of traversing the data of the products and materializing them
                         {carrito.map((product) => ( 
                             <CarContainer>
                                 <Image src={product.image} key={product.id} />
@@ -182,9 +182,10 @@ export const Cart = () => {
                         ))}
                     </>
                 )}
-
-                <TotalCar>Total:$1000000</TotalCar>
+                <TotalCar>Valor total de la compra: $ {total}</TotalCar>
             </Car>
+
+            //Button that redirects to WhatsApp to complete the purchase with the direct seller
             <Button>Realizar el pago</Button>
         </Cars>
     );

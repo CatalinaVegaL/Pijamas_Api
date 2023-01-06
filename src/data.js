@@ -1,3 +1,4 @@
+//Data from the categories component located on the Homepage
 export const categories = {
   status: "success",
   items:[
@@ -22,6 +23,7 @@ export const categories = {
   ]
 }
 
+//Data of the benefits component located on the Homepage
 export const benefits = {
   status: "success",
   items:[
@@ -52,6 +54,7 @@ export const benefits = {
   ]
 }
 
+//Sales product data
 export const Data = {
   status: "success",
   items:[
