@@ -24,25 +24,25 @@ export const categories = [
 export const benefits = [
   {
     id: 1,
-    img:"../ResourcesImg/Shield.svg",
+    img:require("../src/Resources/Shield.png"),
     title: "Pago seguro",
     desc: "Protegemos los datos de tu compra",
   },
   {
     id: 2,
-    img:"../ResourcesImg/Calendar.svg",
+    img:require("../src/Resources/Calendar.png"),
     title: "Envío rapido",
     desc: "Envío directo a tu vivienda",
   },
   {
     id: 3,
-    img:"../ResourcesImg/CreditCard.svg",
+    img:require("../src/Resources/CreditCard.png"),
     title: "Medios de pago",
     desc: "Recibimos varios medios de pago",
   },
   {
     id: 4,
-    img:"../ResourcesImg/Truck.svg",
+    img:require("../src/Resources/Truck.png"),
     title: "A todo Colombia",
     desc: "Hacemos envios a todo el país",
   },
