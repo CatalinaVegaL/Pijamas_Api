@@ -59,6 +59,8 @@ export const Data = {
       image: require('./Resources/Female_1.png'),
       category: "Femenino",
       cantidad: 1,
+      position:0,
+      size: ["xs", "s", "m", "l"],
     },
     {
       id: 2,
@@ -67,6 +69,8 @@ export const Data = {
       image: require('./Resources/Female_2.png'),
       category: "Femenino",
       cantidad: 1,
+      position:0,
+      size: ["xs", "s", "m", "l"],
     },
     {
       id: 3,
@@ -75,6 +79,8 @@ export const Data = {
       image: require('./Resources/Female_3.png'),
       category: "Femenino",
       cantidad: 1,
+      position:0,
+      size: ["xs", "s", "m", "l"],
     },
     {
       id: 4,
@@ -83,6 +89,8 @@ export const Data = {
       image: require('./Resources/Female_4.png'),
       category: "Femenino",
       cantidad: 1,
+      position:0,
+      size: ["xs", "s", "m", "l"],
     },
     {
       id: 5,
@@ -91,6 +99,8 @@ export const Data = {
       image: require('./Resources/Male_1.png'),
       category: "Masculina",
       cantidad: 1,
+      position:0,
+      size: ["xs", "s", "m", "l"],
     },
     {
       id: 6,
@@ -99,6 +109,8 @@ export const Data = {
       image: require('./Resources/Male_2.png'),
       category: "Masculina",
       cantidad: 1,
+      position:0,
+      size: ["xs", "s", "m", "l"],
     },
     {
       id: 7,
@@ -107,6 +119,8 @@ export const Data = {
       image: require('./Resources/Male_3.png'),
       category: "Masculina",
       cantidad: 1,
+      position:0,
+      size: ["xs", "s", "m", "l"],
     },
     {
       id: 8,
@@ -115,6 +129,8 @@ export const Data = {
       image: require('./Resources/Male_4.png'),
       category: "Masculina",
       cantidad: 1,
+      position:0,
+      size: ["xs", "s", "m", "l"],
     },
     {
       id: 9,
@@ -123,6 +139,8 @@ export const Data = {
       image: require('./Resources/Childish_1.png'),
       category: "Infantil",
       cantidad: 1,
+      position:0,
+      size: ["xs", "s", "m", "l"],
     },
     {
       id: 10,
@@ -131,6 +149,8 @@ export const Data = {
       image: require('./Resources/Childish_2.png'),
       category: "Infantil",
       cantidad: 1,
+      position:0,
+      size: ["xs", "s", "m", "l"],
     },
     {
       id: 11,
@@ -139,6 +159,8 @@ export const Data = {
       image: require('./Resources/Childish_3.png'),
       category: "Infantil",
       cantidad: 1,
+      position:0,
+      size: ["xs", "s", "m", "l"],
     },
     {
       id: 12,
@@ -147,6 +169,8 @@ export const Data = {
       image: require('./Resources/Childish_4.png'),
       category: "Infantil",
       cantidad: 1,
+      position:0,
+      size: ["xs", "s", "m", "l"],
     },
   ]
 }

@@ -57,7 +57,7 @@ const Icon = styled.div`
 `;
 
 //------------------------------------  COMPONENT DEVELOPMENT  ------------------------------------//
-export const ProductItem = ({ title, image, category, price, id }) => {
+export const ProductItem = ({ image, id }) => {
     
     //hook structuring
     const value = useContext(DataContext);

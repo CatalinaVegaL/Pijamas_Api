@@ -110,6 +110,26 @@ export const Cart = () => {
   const [carrito, setCarrito] = value.carrito;
   const [total] = value.total;
 
+//Function to increase quantity of products
+const sumsize = id => {
+  carrito.forEach(item => {
+    if (item.id === id) {
+      item.position === 3 ? item.position = 3 : item.position += 1;
+    }
+    setCarrito([...carrito])
+  })
+}
+
+//Function to increase quantity of products
+const restsize = id => {
+  carrito.forEach(item => {
+    if (item.id === id) {
+      item.position === 0 ? item.position = 0 : item.position -= 1;
+    }
+    setCarrito([...carrito])
+  })
+}
+
   //Function to reduce quantity of products
   const rest = id => {
     carrito.forEach(item => {
@@ -173,9 +193,9 @@ export const Cart = () => {
                 </TextCar>
                 <IntCar>
                   <BottonCar>
-                    <box-icon name="chevron-up" onClick={() => sum(product.id)} ></box-icon>
-                    <Cant>{product.cantidad}</Cant>
-                    <box-icon name="chevron-down" onClick={() => rest(product.id)}  ></box-icon>
+                    <box-icon name="chevron-up" onClick={() => sumsize(product.id)} ></box-icon>
+                    <Cant>{product.size[product.position]}</Cant>
+                    <box-icon name="chevron-down" onClick={() => restsize(product.id)} ></box-icon>
                   </BottonCar>
                   <RemoveItem onClick={() => removeProduct(product.id)}>
                     <box-icon name="trash"></box-icon>
