@@ -1,6 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useContext } from "react";
 import Card from "../../Resources/Male_1.png";
+import styled from "styled-components";
+import { DataContext } from "../../Context/Dataprovider"
 
 const Cars = styled.div`
     display: flex;
@@ -107,26 +108,40 @@ const Button = styled.div`
 `;
 
 export const Cart = () => {
+
+    const value = useContext(DataContext);
+    const [carrito, setCarrito] = value.carrito;
+    const [total] = value.total;
+
     return (
         <Cars>
             <Car>
-                <CarContainer>
-                    <Image src={Card} />
-                    <TextCar>
-                        <Title>Titulo Titulo Titulo Titulo Titulo Titulo </Title>
-                        <Price>$PRECIO</Price>
-                    </TextCar>
-                    <IntCar>
-                        <BottonCar>
-                            <box-icon name="chevron-up"></box-icon>
-                            <Cant>1</Cant>
-                            <box-icon name="chevron-down"></box-icon>
-                        </BottonCar>
-                        <RemoveItem>
-                            <box-icon name="trash"></box-icon>
-                        </RemoveItem>
-                    </IntCar>
-                </CarContainer>
+            {
+					
+					carrito.length === 0 ? <h2 style={{textAlign: "center", fontSize: "clamp(0px, 2.5vh, 100px)"}}>No tiene nada en el carro de compra</h2> :<>
+					{
+					carrito.map((producto) => (                <CarContainer>
+                        <Image src={producto.image} />
+                        <TextCar>
+                            <Title>{producto.title} </Title>
+                            <Price>${producto.price} </Price>
+                        </TextCar>
+                        <IntCar>
+                            <BottonCar>
+                                <box-icon name="chevron-up"></box-icon>
+                                <Cant>{producto.cantidad}</Cant>
+                                <box-icon name="chevron-down"></box-icon>
+                            </BottonCar>
+                            <RemoveItem>
+                                <box-icon name="trash"></box-icon>
+                            </RemoveItem>
+                        </IntCar>
+                    </CarContainer>))
+				};
+					
+					</>
+					}
+
                 <TotalCar>Total:$1000000</TotalCar>
             </Car>
             <Button>Realizar el pago</Button>

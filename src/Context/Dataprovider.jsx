@@ -20,17 +20,6 @@ export const DataProvider = (props) => {
 	}, []);
 
 	useEffect(() => {
-		const dataCarrito = JSON.parse(localStorage.getItem("dataCarrito"));
-		if (dataCarrito) {
-			setCarrito(dataCarrito);
-		}
-	}, []);
-
-	useEffect(() => {
-		localStorage.setItem("dataCarrito", JSON.stringify(carrito));
-	}, [carrito]);
-
-	useEffect(() => {
 		const getTotal = () => {
 			const res = carrito.reduce((prev, item) => {
 				return prev + item.price * item.cantidad;
