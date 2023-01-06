@@ -165,13 +165,13 @@ export const Cart = () => {
                             <CarContainer>
                                 <Image src={product.image} key={product.id} />
                                 <TextCar>
-                                    <Title>{{product.title} key={product.id}} </Title>
-                                    <Price>${product.price} key={product.id} </Price>
+                                    <Title>{product.title} </Title>
+                                    <Price>${product.price} </Price>
                                 </TextCar>
                                 <IntCar>
                                     <BottonCar>
                                         <box-icon name="chevron-up" onClick={()=> sum(product.id)} ></box-icon>
-                                        <Cant>{product.cantidad} key={product.id}</Cant>
+                                        <Cant>{product.cantidad}</Cant>
                                         <box-icon name="chevron-down" onClick={()=> rest(product.id)}  ></box-icon>
                                     </BottonCar>
                                     <RemoveItem onClick={() => removeProduct(product.id)}>
