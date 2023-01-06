@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Logo from "../../Resources/Logo.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { DataContext } from "../../Context/Dataprovider";
 
 const Container = styled.div``;
 
@@ -84,6 +85,10 @@ const ProductList = styled.div`
 // `;
 
 export const Header = () => {
+
+  const value = useContext(DataContext);
+  const [carrito] = value.carrito;
+
   return (
     <Container>
       <Head>
@@ -95,7 +100,7 @@ export const Header = () => {
         <Link to={`/carrito`}>
           <IconContainer>
             <box-icon name="cart"></box-icon>
-            <ItemTotal>0</ItemTotal>
+            <ItemTotal>{carrito.length}</ItemTotal>
           </IconContainer>
         </Link>
       </Head>

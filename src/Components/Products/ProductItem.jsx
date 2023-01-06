@@ -1,5 +1,6 @@
-import React from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import styled from "styled-components";
+import { DataContext } from "../../Context/Dataprovider";
 
 const Info = styled.div`
     opacity: 0;
@@ -54,7 +55,10 @@ const Icon = styled.div`
     }
 `;
 
-export const ProductItem = ({title, image, category, price, id }) => {
+export const ProductItem = ({ title, image, category, price, id }) => {
+    const value = useContext(DataContext);
+    const addCarrito = value.addCarrito;
+
     return (
         <Product>
             <Image src={image} />
@@ -66,10 +70,10 @@ export const ProductItem = ({title, image, category, price, id }) => {
                 </Icon>
                 <Icon>
                     <a>
-                        <box-icon name="cart"></box-icon>
+                        <box-icon name="cart" onClick={() => addCarrito(id)} ></box-icon>
                     </a>
                 </Icon>
             </Info>
         </Product>
     );
-};
+}
