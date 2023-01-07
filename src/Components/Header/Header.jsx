@@ -8,7 +8,6 @@ import { DataContext } from "../../Context/Dataprovider";
 const Container = styled.div`
 `;
 
-
 const Head = styled.div`
   height: 8vh;
   display: flex;
@@ -52,7 +51,7 @@ const ItemTotal = styled.div`
   left: 0%;
   transform: translate(70%, -50%);
   color: white;
-  background-color: green;
+  background-color: #83a573e4;
 `;
 
 const Nav = styled.div`
@@ -70,11 +69,14 @@ const ProductList = styled.div`
   justify-content: center;
   border-right: 1px solid #646464;
   color: black;
+  &:hover {
+        transform: scale(1.1);
+    }
 `;
 
 //------------------------------------  COMPONENT DEVELOPMENT  ------------------------------------//
 export const Header = () => {
-  
+
   const value = useContext(DataContext);
   const [carrito] = value.carrito;
 
@@ -94,25 +96,27 @@ export const Header = () => {
         </Link>
       </Head>
       <Nav>
-          <Link to={`/productos/Femenino`} style={{
-            flex: "1",
-            display: "Flex",
-            textDecoration:"none"}}>
+        <Link to={`/productos/Femenino`} style={{
+          flex: "1",
+          display: "Flex",
+          textDecoration: "none"
+        }}>
           <ProductList>Femenino</ProductList>
-          </Link>
-          <Link to={`/productos/Masculino`} style={{
-            flex: "1",
-            display: "Flex",
-            textDecoration:"none"}}>
+        </Link>
+        <Link to={`/productos/Masculino`} style={{
+          flex: "1",
+          display: "Flex",
+          textDecoration: "none"
+        }}>
           <ProductList>Masculino</ProductList>
-          </Link>
-          <Link to={`/productos/Infantil`} style={{
-            flex: "1",
-            display: "Flex",
-            textDecoration:"none"}}>
+        </Link>
+        <Link to={`/productos/Infantil`} style={{
+          flex: "1",
+          display: "Flex",
+          textDecoration: "none"
+        }}>
           <ProductList>Infantil</ProductList>
-          </Link>
-
+        </Link>
       </Nav>
     </Container>
   );

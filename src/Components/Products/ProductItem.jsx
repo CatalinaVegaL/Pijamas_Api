@@ -3,62 +3,80 @@ import styled from "styled-components";
 import { DataContext } from "../../Context/Dataprovider";
 
 //------------------------------------  STYLES  ------------------------------------//
-const Info = styled.div`
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.2);
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.5s ease;
-    cursor: pointer;
-`;
 
 const Product = styled.div`
     flex: 1;
-    margin: 5px;
-    min-width: 280px;
+    margin: 3.5vh 0vh;
+    width: 270px;
     height: 350px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: #f5fbfd;
-    position: relative;
+    justify-content:center;
+    display: flex;
+    flex-direction:column;
+    font-size: clamp(10px, 2.5vh, 100px);
+    @media (min-width: 767px) {
+    margin-top:3.5vh;
+}
+`;
 
-    &:hover ${Info} {
-        opacity: 1;
-    }
+const ImgContainer = styled.div`
+    height: 262.5px;
+    width: 270px;
+    background-color:#F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    border-radius:10%;
+    overflow:hidden;
 `;
 
 const Image = styled.img`
-    height: 75%;
-    z-index: 2;
+    height:100%;
+`;
+
+const Text = styled.div`
+    width: 270px;
+    text-align:justify;
+
+`;
+
+const Title = styled.div`
+    margin-top:1.5vh;
+    font-weight: bolder;
+    height:7vh;
+    @media (min-width: 767px) {
+    margin-top:2vh;
+}
+`;
+
+const Price = styled.div`
+    margin-top:1.5vh;
+    @media (min-width: 767px) {
+    margin-top:2vh;
+}
 `;
 
 const Icon = styled.div`
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-    transition: all 0.5s ease;
+    background-color:#83a573d4;
+    padding: 0.5vh;
+    text-decoration: underline;
+    margin-top:1.5vh;
+    cursor: pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     &:hover {
-        background-color: #e9f5f5;
-        transform: scale(1.2);
+        background-color: #83a573;
+        transform: scale(1.1);
     }
+    @media (min-width: 767px) {
+    margin-top:2vh;
+}
 `;
 
 //------------------------------------  COMPONENT DEVELOPMENT  ------------------------------------//
-export const ProductItem = ({ image, id }) => {
-    
+export const ProductItem = ({ title, image, price, id }) => {
     //hook structuring
     const value = useContext(DataContext);
     const addCarrito = value.addCarrito;
@@ -66,19 +84,14 @@ export const ProductItem = ({ image, id }) => {
     //Return of the function
     return (
         <Product>
-            <Image src={image} />
-            <Info>
-                <Icon>
-                    <a href="#">
-                        <box-icon name="search-alt-2"></box-icon>
-                    </a>
+            <ImgContainer><Image src={image} /></ImgContainer>
+            <Text>
+                <Title>{title}</Title>
+                <Price>${price}</Price>
+                <Icon onClick={() => addCarrito(id)}>Agregar al carrito
+                        <box-icon type="solid" name="shopping-bag"></box-icon>
                 </Icon>
-                <Icon>
-                    <a>
-                        <box-icon name="cart" onClick={() => addCarrito(id)} ></box-icon>
-                    </a>
-                </Icon>
-            </Info>
+            </Text>
         </Product>
     );
-}
+};

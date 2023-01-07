@@ -229,7 +229,8 @@ export const Cart = () => {
         width: "50%",
         cursor: "pointer",
         fontWeight: "600",
-        transform: "50%"
+        transform: "50%",
+        fontSize: "clamp(10px, 2.1vh, 100px)",
       }} number="57-320-804-46-12" message={`Buen día, me encuentro interesado en los siguientes productos:  ${carrito.map((item) =>
         " " + item.title + ", Cantidad: " + item.cantidad + ", Talla: " + item.size[item.position] + " "
       )} con un precio total de $${total}. En breve nos comunicaremos contigo para confirmar el proceso de pago y envío de los productos`} > <Button>Redirigir lacompra a WhatsApp</Button> </ReactWhatsapp>
