@@ -56,7 +56,8 @@ const IntCar = styled.div`
 `;
 
 const Title = styled.div`
-  font-weight: 600;`;
+  font-weight: 600;
+  text-align:justify;`;
 
 const Price = styled.div``;
 
@@ -83,7 +84,6 @@ const Cant = styled.div`
   border: 1px solid #646464;
   width: 25px;
   height: 25px;
-
 `;
 
 const RemoveItem = styled.div`
@@ -104,6 +104,7 @@ const RemoveItem = styled.div`
 
 const TotalCar = styled.div`
   font-weight: 700;
+  padding: 4vh 2vh 2vh 2vh ;
 `;
 
 const Button = styled.div`
@@ -230,8 +231,8 @@ export const Cart = () => {
         fontWeight: "600",
         transform: "50%"
       }} number="57-320-804-46-12" message={`Buen día, me encuentro interesado en los siguientes productos:  ${carrito.map((item) =>
-        item.cantidad + " " + item.title
-      )} con un precio total de $${total}. En breve nos comunicaremos contigo para confirmar el proceso de pago y envío de los productos`} > <Button>Redirigir a la aplicación WhatsApp</Button> </ReactWhatsapp>
+        " " + item.title + ", Cantidad: " + item.cantidad + ", Talla: " + item.size[item.position] + " "
+      )} con un precio total de $${total}. En breve nos comunicaremos contigo para confirmar el proceso de pago y envío de los productos`} > <Button>Redirigir lacompra a WhatsApp</Button> </ReactWhatsapp>
     </Cars>
   );
 };
