@@ -9,7 +9,11 @@ const Cars = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: clamp(10px, 2.5vh, 100px);
+  margin: 10px;
+  font-size: clamp(10px, 2.1vh, 100px);
+  @media (min-width: 767px) {
+    font-size: clamp(10px, 2.5vh, 100px);
+  }
 `;
 
 const Car = styled.div`
@@ -23,8 +27,9 @@ const CarContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   height: 30vmin;
-  width: 98vmin;
-  margin: 1vw;
+  width: 100vmin;
+  padding:2vmin 0;
+  border-bottom: 1px solid #20202029;
 `;
 
 const Image = styled.img`
@@ -50,7 +55,8 @@ const IntCar = styled.div`
   justify-content: space-around;
 `;
 
-const Title = styled.div``;
+const Title = styled.div`
+  font-weight: 600;`;
 
 const Price = styled.div``;
 
@@ -58,11 +64,11 @@ const BottonCar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 90px;
-  height: 30px;
+  width: 75px;
+  height: 25px;
   border: 1px solid #646464;
   border-radius: 7%;
-  transform: scale(0.8);
+  transform: scale(0.7);
   cursor:pointer;
   @media (min-width: 767px) {
     transform: scale(1);
@@ -73,22 +79,23 @@ const Cant = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #64646476;
+  background-color: #b9b9b976;
   border: 1px solid #646464;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
+
 `;
 
 const RemoveItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border: 1px solid #646464;
-  background-color: #64646476;
+  background-color: #b9b9b976;
   border-radius: 7%;
-  transform: scale(0.8);
+  transform: scale(0.6);
   cursor:pointer;
   @media (min-width: 767px) {
     transform: scale(1);
@@ -110,25 +117,25 @@ export const Cart = () => {
   const [carrito, setCarrito] = value.carrito;
   const [total] = value.total;
 
-//Function to increase quantity of products
-const sumsize = id => {
-  carrito.forEach(item => {
-    if (item.id === id) {
-      item.position === 3 ? item.position = 3 : item.position += 1;
-    }
-    setCarrito([...carrito])
-  })
-}
+  // function that increments the position of the selected size
+  const sumsize = id => {
+    carrito.forEach(item => {
+      if (item.id === id) {
+        item.position === 3 ? item.position = 3 : item.position += 1;
+      }
+      setCarrito([...carrito])
+    })
+  }
 
-//Function to increase quantity of products
-const restsize = id => {
-  carrito.forEach(item => {
-    if (item.id === id) {
-      item.position === 0 ? item.position = 0 : item.position -= 1;
-    }
-    setCarrito([...carrito])
-  })
-}
+  // function that decrease the position of the selected size
+  const restsize = id => {
+    carrito.forEach(item => {
+      if (item.id === id) {
+        item.position === 0 ? item.position = 0 : item.position -= 1;
+      }
+      setCarrito([...carrito])
+    })
+  }
 
   //Function to reduce quantity of products
   const rest = id => {
@@ -193,6 +200,11 @@ const restsize = id => {
                 </TextCar>
                 <IntCar>
                   <BottonCar>
+                    <box-icon name="chevron-up" onClick={() => sum(product.id)} ></box-icon>
+                    <Cant>{product.cantidad}</Cant>
+                    <box-icon name="chevron-down" onClick={() => rest(product.id)} ></box-icon>
+                  </BottonCar>
+                  <BottonCar>
                     <box-icon name="chevron-up" onClick={() => sumsize(product.id)} ></box-icon>
                     <Cant>{product.size[product.position]}</Cant>
                     <box-icon name="chevron-down" onClick={() => restsize(product.id)} ></box-icon>
@@ -216,7 +228,7 @@ const restsize = id => {
         width: "50%",
         cursor: "pointer",
         fontWeight: "600",
-        transform:"50%"
+        transform: "50%"
       }} number="57-320-804-46-12" message={`Buen día, me encuentro interesado en los siguientes productos:  ${carrito.map((item) =>
         item.cantidad + " " + item.title
       )} con un precio total de $${total}. En breve nos comunicaremos contigo para confirmar el proceso de pago y envío de los productos`} > <Button>Redirigir a la aplicación WhatsApp</Button> </ReactWhatsapp>

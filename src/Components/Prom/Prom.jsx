@@ -65,7 +65,7 @@ const Prom = () => {
                     disfrutar tus días de descanso y sueño usando una pijama que te
                     encante.
                 </Description>
-                <Link to={``}>
+                <Link to={`/productos/Femenino`}>
                     <Botton>ENCUENTRA AQUÍ TU PIJAMA PERFECTA</Botton>
                 </Link>
             </ContainerLeft>
