@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+<p align="center">
+  <img width="300" height="300" src="https://github.com/lidvegla/Pijamas_Api/blob/master/src/Resources/Logo.svg">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+La tienda virtual Pijamas Buen Dormir es un emprendimiento dedicado a la confección y venta de pijamas para adultos (hombres y mujeres) y niños, de acuerdo a las tendencias de moda actuales."La vida es demasiado corta como para que te niegues el placer de disfrutar tus días de descanso y sueño usando una pijama que te encante".
 
-## Available Scripts
+# Sobre el proyecto
 
-In the project directory, you can run:
+El proyecto Pijamas | Buen dormir es un pagina web desarrollada mediante el lenguaje de programación de JavaScript empleando la librería de [React](https://es.reactjs.org/) y [Styled components para React](https://styled-components.com/) la cual permite estilizar la aplicación, en cuanto al despiegue fue ejecutado con [Vercel](https://vercel.com/).
 
-### `npm start`
+La idea de proyecto se basa en el comercio electronico donde se realiza la actividad de compra o venta electrónica de productos en servicios en línea o por Internet. El proyecto se divide en 3 paginas que consta de: pagina principal [Homepage.jsx], productos [ProductList.jsx] y carrito [Cart.jsx].
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Homepage [Homepage.jsx]: En esta pagina se encuentra la información principal sobre el emprendimiento como el eslogan, las categorias y los beneficios al realizar la compra. 
+- Productos [ProductList.jsx]: En esta pagina se los productos que el cliente ofrece, estos se encuentra clasificada de acuerdo a las categorias de productos que abarca el cliente (femenino, masculino e infantil), en esta pagina el usuario puede seleccionar los productos que desea comprar, estos seras transferidos a la pagina del carrito.  
+- Carrito [Cart.jsx]: En esta pagina se encuentra los productos que el usuario seleccionó, el usuario pueda definir la cantidad de productos que requiere y la talla que desea, una vez realice la selección de productos, el usuario sera re dirigido a la pagina de WhastApp del cliente donde se acordará el envío y medio de pago.
 
-### `npm test`
+![image](https://user-images.githubusercontent.com/92132152/211133226-1679940b-4822-4466-9e02-8e679b001ae0.png)
+![image](https://user-images.githubusercontent.com/92132152/211133240-1c766c9f-52c9-4654-ba57-dad625ebbd35.png)
+![image](https://user-images.githubusercontent.com/92132152/211133248-b8446df2-5368-4312-b758-493e7f0d2f49.png)
+![image](https://user-images.githubusercontent.com/92132152/211133299-ad3aa742-e21a-4387-b619-bd60a8c313dc.png)
+![image](https://user-images.githubusercontent.com/92132152/211133317-9abb2db8-e28a-4c9c-af0c-b8eaa2641205.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Haga Click aquí para ver el despliegue del proyecto](https://pijama-store-lidvegla.vercel.app/).
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
