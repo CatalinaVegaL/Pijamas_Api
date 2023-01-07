@@ -8,20 +8,19 @@ const Product = styled.div`
     flex: 1;
     margin: 3.5vh 0vh;
     width: 270px;
-    height: 350px;
+    height: 550px;
     display: flex;
     align-items: center;
     justify-content:center;
-    display: flex;
     flex-direction:column;
     font-size: clamp(10px, 2.5vh, 100px);
     @media (min-width: 767px) {
-    margin-top:3.5vh;
+    margin:2vh;
 }
 `;
 
 const ImgContainer = styled.div`
-    height: 262.5px;
+    height: 300px;
     width: 270px;
     background-color:#F5F5F5;
     display: flex;
@@ -44,7 +43,7 @@ const Text = styled.div`
 const Title = styled.div`
     margin-top:1.5vh;
     font-weight: bolder;
-    height:7vh;
+    height:9vh;
     @media (min-width: 767px) {
     margin-top:2vh;
 }
